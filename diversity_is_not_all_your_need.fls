@@ -416,9 +416,6 @@ INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-INPUT ./diversity_is_not_all_your_need.aux
-INPUT ./diversity_is_not_all_your_need.aux
-INPUT diversity_is_not_all_your_need.aux
 OUTPUT diversity_is_not_all_your_need.aux
 INPUT e:/latex/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT e:/latex/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -428,12 +425,6 @@ INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT ./diversity_is_not_all_your_need.out
-INPUT ./diversity_is_not_all_your_need.out
-INPUT diversity_is_not_all_your_need.out
-INPUT diversity_is_not_all_your_need.out
-INPUT ./diversity_is_not_all_your_need.out
-INPUT ./diversity_is_not_all_your_need.out
 OUTPUT diversity_is_not_all_your_need.out
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
@@ -472,6 +463,10 @@ INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei52.tfm
 INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei8f.tfm
 INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei5c.tfm
 INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecss0800.tfm
+INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei54.tfm
+INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei6d.tfm
+INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei59.tfm
+INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei5b.tfm
 INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei5e.tfm
 INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei67.tfm
 INPUT e:/latex/texlive/2025/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei65.tfm
@@ -545,6 +540,10 @@ OUTPUT diversity_is_not_all_your_need.snm
 INPUT diversity_is_not_all_your_need.aux
 INPUT ./diversity_is_not_all_your_need.out
 INPUT ./diversity_is_not_all_your_need.out
+INPUT c:/Windows/Fonts/simhei.ttf
+INPUT c:/Windows/Fonts/simhei.ttf
+INPUT c:/Windows/Fonts/simhei.ttf
+INPUT c:/Windows/Fonts/simhei.ttf
 INPUT c:/Windows/Fonts/simhei.ttf
 INPUT c:/Windows/Fonts/simhei.ttf
 INPUT c:/Windows/Fonts/simhei.ttf
