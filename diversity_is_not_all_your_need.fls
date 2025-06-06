@@ -416,6 +416,9 @@ INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+INPUT ./diversity_is_not_all_your_need.aux
+INPUT ./diversity_is_not_all_your_need.aux
+INPUT diversity_is_not_all_your_need.aux
 OUTPUT diversity_is_not_all_your_need.aux
 INPUT e:/latex/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT e:/latex/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -425,6 +428,12 @@ INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT ./diversity_is_not_all_your_need.out
+INPUT ./diversity_is_not_all_your_need.out
+INPUT diversity_is_not_all_your_need.out
+INPUT diversity_is_not_all_your_need.out
+INPUT ./diversity_is_not_all_your_need.out
+INPUT ./diversity_is_not_all_your_need.out
 OUTPUT diversity_is_not_all_your_need.out
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 INPUT e:/latex/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict

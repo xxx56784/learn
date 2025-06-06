@@ -1,12 +1,12 @@
 # Fdb version 4
-["pdflatex"] 1749207751.33754 "e:/tongji_ppt/learn/diversity_is_not_all_your_need.tex" "diversity_is_not_all_your_need.pdf" "diversity_is_not_all_your_need" 1749207753.90812 0
+["pdflatex"] 1749211313.77675 "e:/tongji_ppt/learn/diversity_is_not_all_your_need.tex" "diversity_is_not_all_your_need.pdf" "diversity_is_not_all_your_need" 1749211319.72122 0
   "TongjiBeamer.sty" 1747624481 3607 b1d99181dfdcc70a01ba8dfa6b9cbc97 ""
   "c:/Windows/Fonts/msyh.ttc" 1739322743 19704352 1e10e74402e59d54499af795caf0b135 ""
   "c:/Windows/Fonts/simhei.ttf" 1571147160 9753388 6abc0fcfbaa40600f9cecca3afeb3aa7 ""
-  "diversity_is_not_all_your_need.aux" 1749207753 1091 a5f992e471f805eb93aa2205bb9a200a "pdflatex"
-  "diversity_is_not_all_your_need.nav" 1749207753 659 3cb0dd10b35feddfc4c8158c93cb8db0 "pdflatex"
-  "diversity_is_not_all_your_need.out" 1749207752 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "diversity_is_not_all_your_need.tex" 1749207750 4862 9fac7ead455e4151d8c912f87c211b15 ""
+  "diversity_is_not_all_your_need.aux" 1749211319 1091 a5f992e471f805eb93aa2205bb9a200a "pdflatex"
+  "diversity_is_not_all_your_need.nav" 1749211319 659 3cb0dd10b35feddfc4c8158c93cb8db0 "pdflatex"
+  "diversity_is_not_all_your_need.out" 1749211318 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "diversity_is_not_all_your_need.tex" 1749211312 4863 4e67183e2fe00129966bc803f45ab9fa ""
   "e:/latex/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1747485035 2971 def0b6c1f0b107b3b936def894055589 ""
   "e:/latex/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1747485847 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "e:/latex/texlive/2025/texmf-dist/fonts/sfd/ttf2pk/UGBK.sfd" 1747488588 182544 bcd31d5d273400b38612a969fcab55f9 ""
@@ -278,7 +278,7 @@
   "e:/latex/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1747489021 5569482 bd1cd6e4192cf7416aa065addb1a06f7 ""
   "e:/latex/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1747489236 3569168 89c98bf8e633383d8ee40c37f30f2383 ""
   "e:/latex/texlive/2025/texmf.cnf" 1747488970 713 e69b156964470283e0530f5060668171 ""
-  "e:/tongji_ppt/learn/diversity_is_not_all_your_need.tex" 1749207750 4862 9fac7ead455e4151d8c912f87c211b15 ""
+  "e:/tongji_ppt/learn/diversity_is_not_all_your_need.tex" 1749211312 4863 4e67183e2fe00129966bc803f45ab9fa ""
   "pic/al1.png" 1749197647 122028 a632b9804d0ff245a7237b6ae75d0f60 ""
   "pic/tongji_bg_blue.pdf" 1747624455 1526792 7cf63c14919266829397c9c06377af9a ""
   "pic/tongji_logo.png" 1747626086 67019 222c5e52b6d450b581b4b367a8498a5b ""
@@ -291,5 +291,3 @@
   "diversity_is_not_all_your_need.snm"
   "diversity_is_not_all_your_need.toc"
   (rewritten before read)
-  "diversity_is_not_all_your_need.aux"
-  "diversity_is_not_all_your_need.out"
