@@ -12,7 +12,7 @@
 
 \author[Author]{陈前 辛小雨}
 \title{diversity is all your need}
-\institute{同济大学1}
+\institute{同济大学}
 \date{\today}
 
 
@@ -42,8 +42,50 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Motivation}
-    Current DRL can effectively learn skills driven by rewards, while intelligent creatures can explore the environment and learn skills in an unsupervised manner. As a result, they can use these skills to quickly and effectively meet new, specific goals.
+\begin{frame}
+\tiny
+     \begin{columns}[T] % 创建左右分栏
+
+    %     % --- 左栏：问题与挑战 ---
+         \begin{column}{0.5\textwidth}
+            \begin{block}{传统强化学习的困境}
+                \begin{itemize}
+                    \item \textbf{强依赖外部奖励}
+                    \item 奖励设计成本高昂
+                    \item 限制自主性与通用性
+                    \item[$\rightarrow$] \textit{更像是被动的任务执行者}
+                \end{itemize}
+            \end{block}
+
+            \begin{alertblock}{核心问题}
+                 我们能否让智能体在\textbf{没有任务指令}的情况下，像人类一样\textbf{自主学习}
+            \end{alertblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{解决方案：无监督强化学习}
+                \textbf{核心思想：} 先学习，后做事 (Learn First, Act Later)
+                \begin{itemize}
+                    \item 在无奖励环境中，自主发现一系列\textbf{通用、可复用的技能} (Skills)。
+                \end{itemize}
+            \end{block}
+
+            \textbf{关键方法：技能发现}
+                \begin{itemize}
+                    \item \textbf{目标：} 多样性 (Diversity is All You Need)
+                    \item \textbf{工具：} 信息论 (Information Theory)
+                    \begin{itemize}
+                        \tiny
+                        \item 最大化 \textbf{互信息} $I(S; Z)$ $\rightarrow$ \textit{技能可区分}
+                        \item 最大化 \textbf{熵} $H(A|S, Z)$ $\rightarrow$ \textit{探索最大化}
+                    \end{itemize}
+                \end{itemize}
+            
+            \textbf{研究聚焦}
+                提出一种新的无监督技能发现框架，旨在提升技能的\textbf{多样性、实用性与组合性}
+
+         \end{column}
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}{Related Work}
