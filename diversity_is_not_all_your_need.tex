@@ -1,7 +1,8 @@
 \documentclass{beamer}
 \usepackage{ctex, hyperref}
 \usepackage[T1]{fontenc}
-
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 % other packages
 \usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
 \usepackage{graphicx,pstricks,listings,stackengine}
@@ -50,65 +51,197 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Motivation}
-    Current DRL can effectively learn skills driven by rewards, while intelligent creatures can explore the environment and learn skills in an unsupervised manner. As a result, they can use these skills to quickly and effectively meet new, specific goals.
-\end{frame}
+\begin{frame}
+\tiny
+     \begin{columns}[T] % 创建左右分栏
 
-\begin{frame}{Related Work}
-	\footnotesize
-	\begin{itemize}
-		\item Used to solve exploration problems in sparse reward environments
-		\vspace{0.2cm}
-		\item For long-horizon tasks, unsupervised learned skills can serve as primitives in hierarchical reinforcement learning to reduce episode length (high-level policies select skills, and low-level skills execute actions)
-		\vspace{0.2cm}
-		\item Used in scenarios where interacting with the environment is free but evaluating rewards requires human feedback, reducing the amount of supervision needed for learning tasks\vspace{0.2cm}
-		\item Used to determine which tasks an agent should learn in an unfamiliar environment (unsupervised emergence of diverse skills)
-	\end{itemize}
-\end{frame}
+    %     % --- 左栏：问题与挑战 ---
+         \begin{column}{0.5\textwidth}
+            \begin{block}{传统强化学习的困境}
+                \begin{itemize}
+                    \item \textbf{强依赖外部奖励}
+                    \item 奖励设计成本高昂
+                    \item 限制自主性与通用性
+                    \item[$\rightarrow$] \textit{更像是被动的任务执行者}
+                \end{itemize}
+            \end{block}
 
-\begin{frame}{Contribution}
-	\footnotesize
-	\vspace{-0.5cm}
-	
-	\begin{itemize}
-		\item Proposes the DIAYN method, which can learn useful skills without a reward function
-		\vspace{0.2cm}
-		\item Presents a concise optimization objective that induces the unsupervised emergence of diverse skills, such as walking and jumping; capable of solving benchmark tasks without receiving real task rewards
-		\vspace{0.2cm}
-		\item Proposes methods for applying learned skills to hierarchical reinforcement learning and imitation learning
-		\vspace{0.2cm}
-		\item Demonstrates how to quickly apply discovered skills to solve new tasks
-	\end{itemize}
-	
-	\begin{figure}[htbp] 
-    		\centering 
-    		\includegraphics[width=0.8\textwidth]{pic/al1.png}
-	\end{figure}
-
-\end{frame}
-
-\begin{frame}{Core Ideas and Approach}
-	\tiny
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \textbf{Core Ideas}
-            \begin{itemize}
-                \item Skills guide the states visited by the agent, with different skills visiting different states, thus making skills distinguishable \(s \sim \pi(z)\).
-                \vspace{0.2cm}
-                \item Skills need to be as random as possible to encourage exploration, while being as diverse as possible, and also need to avoid randomness affecting distinguishability (stay away from the state spaces of other skills).
-                \vspace{0.2cm}
-                \item Use state rather than action to distinguish skills, because actions that do not change the environment are unobservable.
-            \end{itemize}
+            \begin{alertblock}{核心问题}
+                 我们能否让智能体在\textbf{没有任务指令}的情况下，像人类一样\textbf{自主学习}
+            \end{alertblock}
         \end{column}
         \begin{column}{0.5\textwidth}
-            \textbf{Approach}
-            \begin{itemize}
-                \item Use maximum entropy policies and maximize an information-theoretic distinguishability objective to learn skills.
+            \begin{block}{解决方案：无监督强化学习}
+                \textbf{核心思想：} 先学习，后做事 (Learn First, Act Later)
+                \begin{itemize}
+                    \item 在无奖励环境中，自主发现一系列\textbf{通用、可复用的技能} (Skills)。
+                \end{itemize}
+            \end{block}
 
-                    \item Maximize the mutual information between skills and states to enable skills to control the agent to visit corresponding states.
-                    \item Maximize the entropy of the mixed policy (the mixed policy is the prior distribution of all skills and latent variables).
-                    \item Minimize the mutual information between actions and skills given states, so that skills are distinguished by states rather than actions.
-            \end{itemize}
+            \textbf{关键方法：技能发现}
+                \begin{itemize}
+                    \item \textbf{目标：} 多样性 (Diversity is All You Need)
+                    \item \textbf{工具：} 信息论 (Information Theory)
+                    \begin{itemize}
+                        \tiny
+                        \item 最大化 \textbf{互信息} $I(S; Z)$ $\rightarrow$ \textit{技能可区分}
+                        \item 最大化 \textbf{熵} $H(A|S, Z)$ $\rightarrow$ \textit{探索最大化}
+                    \end{itemize}
+                \end{itemize}
+            
+            \textbf{研究聚焦}
+                提出一种新的无监督技能发现框架，旨在提升技能的\textbf{多样性、实用性与组合性}
+
+         \end{column}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}{应用价值}
+
+    \begin{itemize}
+        \item \textbf{解决稀疏奖励环境下的探索问题}
+        \vspace{0.5cm}
+
+        \item \textbf{作为分层强化学习的“积木块” (Primitives)}
+        \begin{itemize}
+            \item \textbf{上层策略}：选择“技能”（如“向前走”、“开门”）。
+            \item \textbf{下层技能}：执行具体的“动作”序列。
+            \item \textit{效果：} 显著缩短长时序任务的有效决策步长。
+        \end{itemize}
+        \vspace{0.5cm}
+        
+        \item \textbf{降低对人类监督的依赖}
+        \begin{itemize}
+            \item 适用于\textbf{交互成本低，但奖励评估成本高}（如需人类反馈）的场景。
+            \item 智能体先自由探索学会技能，再由人类少量标注哪个技能有用。
+        \end{itemize}
+        \vspace{0.5cm}
+        
+        \item \textbf{在未知环境中自主发现潜在任务}
+        \begin{itemize}
+            \item 无监督地涌现出多样化技能，揭示了智能体在该环境中“能做什么”。
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{本文主要贡献 }
+
+    \begin{itemize}
+        \item \textbf{提出了一种无监督技能发现方法 DIAYN}
+        \begin{itemize}
+            \item 无需任何外部奖励函数，即可学习到有意义的技能。
+        \end{itemize}
+        \vspace{0.3cm}
+        
+        \item \textbf{设计了一个简洁且有效的目标函数}
+        \begin{itemize}
+            \item 基于信息论，能够驱动智能体涌现出如行走、跳跃等多样的技能。
+            \item 仅通过无监督预训练，即可直接解决一些基准测试任务。
+        \end{itemize}
+        \vspace{0.3cm}
+        
+        \item \textbf{探索了技能的下游应用方法}
+        \begin{itemize}
+            \item 详细阐述了如何将学习到的技能应用于分层强化学习和模仿学习。
+            \item 展示了如何快速利用已发现的技能来解决新任务。
+        \end{itemize}
+    \end{itemize}
+
+    \begin{figure}[htbp] 
+        \centering 
+        % 请确保图片路径正确
+        \includegraphics[width=0.75\textwidth]{pic/al1.png}
+        \caption{DIAYN 算法框架示意图}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \tiny
+    \frametitle{核心思想与实现方法}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{block}{核心思想 (Core Ideas)}
+                \begin{enumerate}
+                    \item \textbf{技能决定状态，使其可区分} \\
+                    不同的技能 $z$ 应该引导智能体访问不同的状态 $s$。
+                    \vspace{0.2cm}
+                    
+                    \item \textbf{鼓励探索，同时保持多样性} \\
+                    每个技能的策略应尽可能随机（高熵），同时为保持可区分性，必须探索远离其他技能的状态空间。
+                    \vspace{0.2cm}
+                    
+                    \item \textbf{通过状态而非动作来区分技能} \\
+                    我们只关心技能产生的\textbf{结果}（状态变化），而不关心其\textbf{过程}（具体动作），因为某些动作可能不改变环境。
+                \end{enumerate}
+            \end{block}
+        \end{column}
+
+         \begin{column}{0.4\textwidth}
+            \tiny
+            \begin{block}{实现方法 (Approach)}
+                \textbf{目标：} 最大化一个信息论驱动的目标函数
+                \begin{itemize}
+                    \item \textbf{最大化} 状态与技能的互信息 $I(S; Z)$ 
+                     技能对状态有控制力，可区分
+                    \vspace{0.2cm}
+                    
+                    \item \textbf{最大化} 条件动作熵 $H(A|S)$ 
+                      策略行为尽可能随机，鼓励探索
+                    \vspace{0.2cm}
+                    
+                    \item \textbf{最小化} 条件互信息 $I(A; Z | S)$ 
+                     确保技能由状态而非动作区分
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \begin{alertblock}{最终目标函数 (Objective Function)}
+    \begin{align*}
+        \mathcal{F}(\theta) 
+        &\triangleq \underbrace{I(S; Z)}_{\text{可区分性}} 
+                 + \underbrace{H[A \mid S]}_{\text{探索性}} 
+                 - \underbrace{I(A; Z \mid S)}_{\text{解耦动作}} \\
+        &= \underbrace{H[Z]}_{\text{技能多样}} 
+           - \underbrace{H[Z \mid S]}_{\text{状态推断技能}} 
+           + \underbrace{H[A \mid S, Z]}_{\text{技能内部探索}}
+    \end{align*}
+    \end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+    
+    \frametitle{挑战与解决方案：变分推断 (Variational Inference)}
+    \tiny
+    \vspace{-0.2cm}
+    \begin{columns}[T]
+        % 左栏：挑战
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{挑战：后验概率难以计算}
+                目标函数中的互信息项 $I(S;Z)$ 依赖于条件熵 $H(Z|S)$，而计算它需要知道后验概率 $p(z|s)$。
+                \vspace{0.3em}
+                \begin{itemize}
+                    \item $p(z|s) = \frac{p(s|z)p(z)}{p(s)}$
+                    \item 其中分母 $p(s) = \int p(s|z)p(z)dz$ 需要对所有技能和轨迹积分，计算上是\textbf{不可行 (intractable)}的。
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+
+        % 右栏：解决方案
+        \begin{column}{0.5\textwidth}
+            \begin{block}{解决方案：引入鉴别器}
+                我们引入一个可学习的分布 $q_\phi(z|s)$ 来\textbf{近似}真实的后验 $p(z|s)$。
+                \vspace{0.3em}
+                \begin{itemize}
+                    \item $q_\phi(z|s)$ 是一个神经网络，通常称为\textbf{鉴别器 (Discriminator)} 或分类器。
+                    \item \textbf{任务：} 输入状态 $s$，输出它由各个技能 $z$ 产生的概率。
+                \end{itemize}
+            \end{block}
         \end{column}
     \end{columns}
     
@@ -123,7 +256,4 @@
 \]
 \end{frame}
 
-\begin{frame}{Conclusion}
-本文
-\end{frame}
 \end{document} 
